@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Evolution Review Practice Test</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+    h1, h2 { color: #2c3e50; }
+    .question { margin-bottom: 20px; }
+    .question p { font-weight: bold; }
+    .options label { display: block; margin-left: 20px; }
+    textarea { width: 100%; height: 100px; margin-top: 10px; }
+    .submit-button { margin-top: 20px; padding: 10px 20px; font-size: 16px; }
+  </style>
+</head>
+<body>
+
+<h1>Evolution Review Practice Test</h1>
+
+<h2>Multiple Choice</h2>
+
+<script>
+  const questions = [
+    "What is relative dating used for?",
+    "What does spontaneous generation suggest?",
+    "Which idea states that life arises only from pre-existing life?",
+    "Which is NOT one of the four principles of natural selection?",
+    "\"Survival of the fittest\" refers to:",
+    "What is evolution?",
+    "Which trait is a newly evolved feature not found in ancestors?",
+    "A trait that appears in ancestral forms is called:",
+    "Structures that are similar in form but have different functions are:",
+    "Which of the following structures are similar in function but not in origin?",
+    "A structure that no longer serves its original purpose is:",
+    "What introduces new alleles into a population’s gene pool?",
+    "Which selection favors the average trait?",
+    "Which selection favors one extreme trait over the average?",
+    "Which selection favors both extremes of a trait?",
+    "The formation of new species is called:",
+    "Speciation without a physical barrier is:",
+    "Which involves geographic isolation?",
+    "What is adaptive radiation?",
+    "Two species evolving in response to each other is called:",
+    "Which model says evolution happens slowly over time?",
+    "Punctuated equilibrium is characterized by:",
+    "Where did Darwin travel that inspired his theory?",
+    "Darwin noticed that animals on different Galápagos Islands:",
+    "In \"The Origin of Species,\" Darwin proposed:",
+    "Why did Darwin believe Galápagos species resembled South American ones more than European ones?",
+    "How did Lyell influence Darwin?",
+    "How did Malthus influence Darwin?",
+    "Fossils show evolution by displaying:",
+    "Comparative anatomy supports evolution through:",
+    "Which evidence compares DNA and proteins?",
+    "Biogeography studies:",
+    "How old is Earth?",
+    "What created Earth’s early atmosphere?",
+    "What modern organism is most like early life on Earth?",
+    "Natural selection is related to evolution because:",
+    "Mutations affect evolution by:"
+  ];
+
+  const options = [
+    ["A) Measuring the actual age of a fossil", "B) Comparing fossil ages based on rock layers", "C) Determining DNA similarity", "D) Dating living organisms"],
+    ["A) All organisms evolved over time", "B) Life arises from non-living matter", "C) Species remain unchanged", "D) Life only comes from life"],
+    ["A) Evolution", "B) Spontaneous generation", "C) Natural selection", "D) Biogenesis"],
+    ["A) Variations are inherited", "B) Populations don’t overproduce", "C) Some traits are more favorable", "D) Individuals with favorable traits reproduce"],
+    ["A) The strongest organism", "B) The organism that lives longest", "C) The organism that reproduces most successfully", "D) The one that evolves fastest"],
+    ["A) A sudden appearance of traits", "B) Development of individuals", "C) Change in a species over time", "D) Survival of all traits"],
+    ["A) Ancestral trait", "B) Vestigial structure", "C) Derived trait", "D) Analogous trait"],
+    ["A) Homologous", "B) Ancestral trait", "C) Derived trait", "D) Vestigial structure"],
+    ["A) Homologous", "B) Analogous", "C) Vestigial", "D) Ancestral"],
+    ["A) Homologous", "B) Analogous", "C) Derived", "D) Fossilized"],
+    ["A) Analogous", "B) Homologous", "C) Vestigial", "D) Derived"],
+    ["A) Natural selection", "B) Mutation", "C) Migration", "D) Fossilization"],
+    ["A) Directional", "B) Stabilizing", "C) Disruptive", "D) Adaptive"],
+    ["A) Stabilizing", "B) Disruptive", "C) Directional", "D) Random"],
+    ["A) Directional", "B) Stabilizing", "C) Disruptive", "D) Neutral"],
+    ["A) Mutation", "B) Adaptation", "C) Speciation", "D) Radiation"],
+    ["A) Allopatric", "B) Artificial", "C) Gradual", "D) Sympatric"],
+    ["A) Sympatric speciation", "B) Adaptive radiation", "C) Allopatric speciation", "D) Gradualism"],
+    ["A) Evolution from shared ancestry", "B) Evolution of unrelated organisms", "C) A burst of species evolving from one ancestor", "D) Fossil replacement"],
+    ["A) Sympatric speciation", "B) Coevolution", "C) Artificial selection", "D) Allopatric divergence"],
+    ["A) Punctuated equilibrium", "B) Gradualism", "C) Directional selection", "D) Speciation"],
+    ["A) Constant slow change", "B) Rapid change followed by stability", "C) No evolution", "D) Regular mutation rates"],
+    ["A) Australia", "B) South Africa", "C) Galápagos Islands", "D) Antarctica"],
+    ["A) Were exactly the same", "B) Showed no adaptation", "C) Had traits suited to their environments", "D) Looked like European animals"],
+    ["A) Humans evolved from monkeys", "B) Organisms adapt through acquired traits", "C) Natural selection explains evolution", "D) All species are fixed and unchanging"],
+    ["A) Climate similarity", "B) Close geographic location", "C) Food supply", "D) Random chance"],
+    ["A) By proving evolution is false", "B) By explaining Earth's age and slow geological change", "C) By studying animals", "D) By experimenting with bacteria"],
+    ["A) With fossil discoveries", "B) Through embryology", "C) By showing how resources limit populations", "D) By explaining mimicry"],
+    ["A) Rapid change only", "B) Only living species", "C) Ancestral and derived traits", "D) Random mutations"],
+    ["A) Fossil age", "B) Homologous, analogous, and vestigial structures", "C) Mutation frequency", "D) Species extinction"],
+    ["A) Fossils", "B) Biogeography", "C) Molecular biology", "D) Anatomy"],
+    ["A) Animal behavior", "B) Species extinction", "C) Geographic distribution of species", "D) Cloning"],
+    ["A) 10,000 years", "B) 1 million years", "C) 4.6 billion years", "D) 100 billion years"],
+    ["A) Plants", "B) Volcanoes", "C) Oceans", "D) Animals"],
+    ["A) Worms", "B) Bacteria", "C) Fish", "D) Fungi"],
+    ["A) It stops evolution", "B) It increases extinction", "C) It causes species to remain unchanged", "D) It drives evolutionary change by favoring beneficial traits"],
+    ["A) Preventing speciation", "B) Causing extinction", "C) Introducing new traits", "D) Stopping natural selection"]
+  ];
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const container = document.querySelector("body");
+    for (let i = 0; i < questions.length; i++) {
+      const div = document.createElement("div");
+      div.className = "question";
+      const p = document.createElement("p");
+      p.textContent = `${i + 1}. ${questions[i]}`;
+      div.appendChild(p);
+
+      const optContainer = document.createElement("div");
+      optContainer.className = "options";
+      for (let j = 0; j < options[i].length; j++) {
+        const label = document.createElement("label");
+        label.innerHTML = `<input type="radio" name="q${i + 1}"> ${options[i][j]}`;
+        optContainer.appendChild(label);
+      }
+
+      div.appendChild(optContainer);
+      container.insertBefore(div, document.querySelector("h2 + .question"));
+    }
+  });
+</script>
+
+<h2>Free Response</h2>
+
+<div class="question">
+  <p>38. Compare and contrast aposematic coloration and camouflage. Provide examples.</p>
+  <textarea name="frq1"></textarea>
+</div>
+
+<div class="question">
+  <p>39. Explain the difference between Müllerian and Batesian mimicry. Give examples of each.</p>
+  <textarea name="frq2"></textarea>
+</div>
+
+<div class="question">
+  <p>40. Predict what would happen if bees mutated to have camouflage instead of warning colors. Justify your prediction.</p>
+  <textarea name="frq3"></textarea>
+</div>
+
+<div class="question">
+  <p>41. Identify and explain the three types of natural selection using the selection curves.</p>
+  <textarea name="frq4"></textarea>
+</div>
+
+<div class="question">
+  <p>42. Compare and contrast allopatric and sympatric speciation.</p>
+  <textarea name="frq5"></textarea>
+</div>
+
+<div class="question">
+  <p>43. In a system where a specific moth is the only pollinator of a flower, what might happen if that moth goes extinct? Justify.</p>
+  <textarea name="frq6"></textarea>
+</div>
+
+<button class="submit-button">Submit</button>
+
+</body>
+</html>
