@@ -4,17 +4,27 @@
   <meta charset="UTF-8">
   <title>Evolution Review Practice Test</title>
   <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; display: flex; }
+    main { flex: 1; }
+    aside {
+      width: 300px;
+      margin-left: 20px;
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-radius: 8px;
+    }
     h1, h2 { color: #2c3e50; }
     .question { margin-bottom: 20px; }
     .question p { font-weight: bold; }
     .options label { display: block; margin-left: 20px; }
     textarea { width: 100%; height: 100px; margin-top: 10px; }
     .submit-button { margin-top: 20px; padding: 10px 20px; font-size: 16px; }
+    iframe { width: 100%; height: 200px; margin-top: 10px; }
   </style>
 </head>
 <body>
 
+<main>
 <h1>Evolution Review Practice Test</h1>
 
 <h2>Multiple Choice</h2>
@@ -61,47 +71,47 @@
   ];
 
   const options = [
-    ["A) Measuring the actual age of a fossil", "B) Comparing fossil ages based on rock layers", "C) Determining DNA similarity", "D) Dating living organisms"],
-    ["A) All organisms evolved over time", "B) Life arises from non-living matter", "C) Species remain unchanged", "D) Life only comes from life"],
-    ["A) Evolution", "B) Spontaneous generation", "C) Natural selection", "D) Biogenesis"],
-    ["A) Variations are inherited", "B) Populations don’t overproduce", "C) Some traits are more favorable", "D) Individuals with favorable traits reproduce"],
-    ["A) The strongest organism", "B) The organism that lives longest", "C) The organism that reproduces most successfully", "D) The one that evolves fastest"],
-    ["A) A sudden appearance of traits", "B) Development of individuals", "C) Change in a species over time", "D) Survival of all traits"],
-    ["A) Ancestral trait", "B) Vestigial structure", "C) Derived trait", "D) Analogous trait"],
-    ["A) Homologous", "B) Ancestral trait", "C) Derived trait", "D) Vestigial structure"],
-    ["A) Homologous", "B) Analogous", "C) Vestigial", "D) Ancestral"],
-    ["A) Homologous", "B) Analogous", "C) Derived", "D) Fossilized"],
-    ["A) Analogous", "B) Homologous", "C) Vestigial", "D) Derived"],
-    ["A) Natural selection", "B) Mutation", "C) Migration", "D) Fossilization"],
-    ["A) Directional", "B) Stabilizing", "C) Disruptive", "D) Adaptive"],
-    ["A) Stabilizing", "B) Disruptive", "C) Directional", "D) Random"],
-    ["A) Directional", "B) Stabilizing", "C) Disruptive", "D) Neutral"],
-    ["A) Mutation", "B) Adaptation", "C) Speciation", "D) Radiation"],
-    ["A) Allopatric", "B) Artificial", "C) Gradual", "D) Sympatric"],
-    ["A) Sympatric speciation", "B) Adaptive radiation", "C) Allopatric speciation", "D) Gradualism"],
-    ["A) Evolution from shared ancestry", "B) Evolution of unrelated organisms", "C) A burst of species evolving from one ancestor", "D) Fossil replacement"],
-    ["A) Sympatric speciation", "B) Coevolution", "C) Artificial selection", "D) Allopatric divergence"],
-    ["A) Punctuated equilibrium", "B) Gradualism", "C) Directional selection", "D) Speciation"],
-    ["A) Constant slow change", "B) Rapid change followed by stability", "C) No evolution", "D) Regular mutation rates"],
-    ["A) Australia", "B) South Africa", "C) Galápagos Islands", "D) Antarctica"],
-    ["A) Were exactly the same", "B) Showed no adaptation", "C) Had traits suited to their environments", "D) Looked like European animals"],
-    ["A) Humans evolved from monkeys", "B) Organisms adapt through acquired traits", "C) Natural selection explains evolution", "D) All species are fixed and unchanging"],
-    ["A) Climate similarity", "B) Close geographic location", "C) Food supply", "D) Random chance"],
-    ["A) By proving evolution is false", "B) By explaining Earth's age and slow geological change", "C) By studying animals", "D) By experimenting with bacteria"],
-    ["A) With fossil discoveries", "B) Through embryology", "C) By showing how resources limit populations", "D) By explaining mimicry"],
-    ["A) Rapid change only", "B) Only living species", "C) Ancestral and derived traits", "D) Random mutations"],
-    ["A) Fossil age", "B) Homologous, analogous, and vestigial structures", "C) Mutation frequency", "D) Species extinction"],
-    ["A) Fossils", "B) Biogeography", "C) Molecular biology", "D) Anatomy"],
-    ["A) Animal behavior", "B) Species extinction", "C) Geographic distribution of species", "D) Cloning"],
-    ["A) 10,000 years", "B) 1 million years", "C) 4.6 billion years", "D) 100 billion years"],
-    ["A) Plants", "B) Volcanoes", "C) Oceans", "D) Animals"],
-    ["A) Worms", "B) Bacteria", "C) Fish", "D) Fungi"],
-    ["A) It stops evolution", "B) It increases extinction", "C) It causes species to remain unchanged", "D) It drives evolutionary change by favoring beneficial traits"],
-    ["A) Preventing speciation", "B) Causing extinction", "C) Introducing new traits", "D) Stopping natural selection"]
+    ["Determining the relative age of fossils", "Creating exact fossil ages", "Forming new fossils", "Measuring radioactivity"],
+    ["Life can arise from nonliving matter", "Life only arises from life", "Species are immutable", "Life started in space"],
+    ["Biogenesis", "Spontaneous generation", "Abiogenesis", "Evolution"],
+    ["Inheritance of acquired traits", "Variation exists", "More offspring than can survive", "Traits are inherited"],
+    ["Best adapted individuals survive and reproduce", "Largest individuals survive", "Smartest individuals survive", "Strongest individuals always survive"],
+    ["Change in a species over time", "Mutation reversal", "Loss of traits", "Species extinction"],
+    ["Derived trait", "Ancestral trait", "Vestigial structure", "Analogous structure"],
+    ["Ancestral trait", "Derived trait", "Homologous trait", "Vestigial trait"],
+    ["Homologous structures", "Analogous structures", "Vestigial structures", "Inherited structures"],
+    ["Analogous structures", "Homologous structures", "Vestigial structures", "Fossil structures"],
+    ["Vestigial structure", "Derived trait", "Analogous structure", "Fossilized trait"],
+    ["Mutation", "Adaptation", "Reproduction", "Selection"],
+    ["Stabilizing selection", "Directional selection", "Disruptive selection", "Random selection"],
+    ["Directional selection", "Stabilizing selection", "Disruptive selection", "Natural selection"],
+    ["Disruptive selection", "Stabilizing selection", "Directional selection", "Convergent selection"],
+    ["Speciation", "Mutation", "Evolution", "Adaptation"],
+    ["Sympatric speciation", "Allopatric speciation", "Divergence", "Adaptation"],
+    ["Allopatric speciation", "Sympatric speciation", "Natural selection", "Adaptive radiation"],
+    ["Diversification of one species into many", "Convergent evolution", "Natural selection", "Speciation without divergence"],
+    ["Coevolution", "Adaptive radiation", "Mimicry", "Speciation"],
+    ["Gradualism", "Punctuated equilibrium", "Speciation", "Divergence"],
+    ["Sudden changes followed by stasis", "Slow constant change", "Divergent equilibrium", "Directional equilibrium"],
+    ["Galápagos Islands", "Australia", "Antarctica", "Asia"],
+    ["Had different traits suited to their island's environment", "Were all identical", "Looked like European animals", "Were larger than normal"],
+    ["Natural selection explains how species change", "Species never change", "Humans are unique", "Animals don't evolve"],
+    ["They shared a common ancestor", "Same climate", "Similar soil", "Shared predators"],
+    ["Lyell showed the Earth was old enough for evolution", "Lyell discovered fossils", "Lyell created evolution", "Lyell studied birds"],
+    ["Malthus showed limits to population growth", "Malthus mapped the Galápagos", "Malthus studied plants", "Malthus denied evolution"],
+    ["Derived and ancestral traits", "Radioactive decay", "Chemical composition", "Fossil age"],
+    ["Homologous, analogous, and vestigial structures", "Fossil evidence", "Embryos only", "Plant traits"],
+    ["Molecular evidence", "Anatomy", "Fossils", "Embryology"],
+    ["Distribution of species across Earth", "Age of Earth", "Molecular changes", "Climate"],
+    ["About 4.6 billion years", "10,000 years", "1 million years", "2.3 billion years"],
+    ["Volcanic gases", "Photosynthesis", "Animals", "Lightning"],
+    ["Bacteria", "Fungi", "Fish", "Reptiles"],
+    ["It explains how species adapt and evolve", "It stops mutation", "It causes extinction", "It changes Earth’s orbit"],
+    ["Creating variation for natural selection", "Stabilizing DNA", "Erasing old traits", "Making fossils"],
   ];
 
   document.addEventListener("DOMContentLoaded", () => {
-    const container = document.querySelector("body");
+    const container = document.querySelector("main");
     for (let i = 0; i < questions.length; i++) {
       const div = document.createElement("div");
       div.className = "question";
@@ -118,7 +128,7 @@
       }
 
       div.appendChild(optContainer);
-      container.insertBefore(div, document.querySelector("h2 + .question"));
+      container.appendChild(div);
     }
   });
 </script>
@@ -156,6 +166,24 @@
 </div>
 
 <button class="submit-button">Submit</button>
+</main>
+
+<aside>
+  <h2>Video Player</h2>
+  <input type="text" id="videoURL" placeholder="Paste YouTube link here" style="width:100%">
+  <button onclick="loadVideo()">Load Video</button>
+  <iframe id="youtubePlayer" src="" frameborder="0" allowfullscreen></iframe>
+</aside>
+
+<script>
+  function loadVideo() {
+    const url = document.getElementById("videoURL").value;
+    const videoId = url.split("v=")[1]?.split("&")[0];
+    if (videoId) {
+      document.getElementById("youtubePlayer").src = `https://www.youtube.com/embed/${videoId}`;
+    }
+  }
+</script>
 
 </body>
 </html>
