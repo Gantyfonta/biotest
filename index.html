@@ -4,60 +4,22 @@
   <meta charset="UTF-8">
   <title>Evolution Review Practice Test</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      display: flex;
-      overflow-x: hidden;
-    }
-    main {
-      flex: 1;
-      padding: 20px;
-    }
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; display: flex; }
+    main { flex: 1; }
     aside {
       width: 300px;
-      position: sticky;
-      top: 20px;
-      height: fit-content;
+      margin-left: 20px;
       background-color: #f4f4f4;
       padding: 10px;
       border-radius: 8px;
-      margin: 20px;
     }
-    h1, h2 {
-      color: #2c3e50;
-    }
-    .question {
-      margin-bottom: 20px;
-    }
-    .question p {
-      font-weight: bold;
-    }
-    .options label {
-      display: block;
-      margin-left: 20px;
-    }
-    textarea {
-      width: 100%;
-      height: 100px;
-      margin-top: 10px;
-    }
-    .submit-button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-    }
-    #youtubePlayer {
-      width: 100%;
-      height: 200px;
-      margin-top: 10px;
-      resize: both;
-      overflow: auto;
-    }
-    #videoURL {
-      width: 100%;
-    }
+    h1, h2 { color: #2c3e50; }
+    .question { margin-bottom: 20px; }
+    .question p { font-weight: bold; }
+    .options label { display: block; margin-left: 20px; }
+    textarea { width: 100%; height: 100px; margin-top: 10px; }
+    .submit-button { margin-top: 20px; padding: 10px 20px; font-size: 16px; }
+    iframe { width: 100%; height: 200px; margin-top: 10px; }
   </style>
 </head>
 <body>
@@ -68,8 +30,85 @@
 <h2>Multiple Choice</h2>
 
 <script>
-  const questions = [...]; // unchanged for brevity
-  const options = [...]; // unchanged for brevity
+  const questions = [
+    "What is relative dating used for?",
+    "What does spontaneous generation suggest?",
+    "Which idea states that life arises only from pre-existing life?",
+    "Which is NOT one of the four principles of natural selection?",
+    "\"Survival of the fittest\" refers to:",
+    "What is evolution?",
+    "Which trait is a newly evolved feature not found in ancestors?",
+    "A trait that appears in ancestral forms is called:",
+    "Structures that are similar in form but have different functions are:",
+    "Which of the following structures are similar in function but not in origin?",
+    "A structure that no longer serves its original purpose is:",
+    "What introduces new alleles into a population’s gene pool?",
+    "Which selection favors the average trait?",
+    "Which selection favors one extreme trait over the average?",
+    "Which selection favors both extremes of a trait?",
+    "The formation of new species is called:",
+    "Speciation without a physical barrier is:",
+    "Which involves geographic isolation?",
+    "What is adaptive radiation?",
+    "Two species evolving in response to each other is called:",
+    "Which model says evolution happens slowly over time?",
+    "Punctuated equilibrium is characterized by:",
+    "Where did Darwin travel that inspired his theory?",
+    "Darwin noticed that animals on different Galápagos Islands:",
+    "In \"The Origin of Species,\" Darwin proposed:",
+    "Why did Darwin believe Galápagos species resembled South American ones more than European ones?",
+    "How did Lyell influence Darwin?",
+    "How did Malthus influence Darwin?",
+    "Fossils show evolution by displaying:",
+    "Comparative anatomy supports evolution through:",
+    "Which evidence compares DNA and proteins?",
+    "Biogeography studies:",
+    "How old is Earth?",
+    "What created Earth’s early atmosphere?",
+    "What modern organism is most like early life on Earth?",
+    "Natural selection is related to evolution because:",
+    "Mutations affect evolution by:"
+  ];
+
+  const options = [
+    ["Determining the relative age of fossils", "Creating exact fossil ages", "Forming new fossils", "Measuring radioactivity"],
+    ["Life can arise from nonliving matter", "Life only arises from life", "Species are immutable", "Life started in space"],
+    ["Biogenesis", "Spontaneous generation", "Abiogenesis", "Evolution"],
+    ["Inheritance of acquired traits", "Variation exists", "More offspring than can survive", "Traits are inherited"],
+    ["Best adapted individuals survive and reproduce", "Largest individuals survive", "Smartest individuals survive", "Strongest individuals always survive"],
+    ["Change in a species over time", "Mutation reversal", "Loss of traits", "Species extinction"],
+    ["Derived trait", "Ancestral trait", "Vestigial structure", "Analogous structure"],
+    ["Ancestral trait", "Derived trait", "Homologous trait", "Vestigial trait"],
+    ["Homologous structures", "Analogous structures", "Vestigial structures", "Inherited structures"],
+    ["Analogous structures", "Homologous structures", "Vestigial structures", "Fossil structures"],
+    ["Vestigial structure", "Derived trait", "Analogous structure", "Fossilized trait"],
+    ["Mutation", "Adaptation", "Reproduction", "Selection"],
+    ["Stabilizing selection", "Directional selection", "Disruptive selection", "Random selection"],
+    ["Directional selection", "Stabilizing selection", "Disruptive selection", "Natural selection"],
+    ["Disruptive selection", "Stabilizing selection", "Directional selection", "Convergent selection"],
+    ["Speciation", "Mutation", "Evolution", "Adaptation"],
+    ["Sympatric speciation", "Allopatric speciation", "Divergence", "Adaptation"],
+    ["Allopatric speciation", "Sympatric speciation", "Natural selection", "Adaptive radiation"],
+    ["Diversification of one species into many", "Convergent evolution", "Natural selection", "Speciation without divergence"],
+    ["Coevolution", "Adaptive radiation", "Mimicry", "Speciation"],
+    ["Gradualism", "Punctuated equilibrium", "Speciation", "Divergence"],
+    ["Sudden changes followed by stasis", "Slow constant change", "Divergent equilibrium", "Directional equilibrium"],
+    ["Galápagos Islands", "Australia", "Antarctica", "Asia"],
+    ["Had different traits suited to their island's environment", "Were all identical", "Looked like European animals", "Were larger than normal"],
+    ["Natural selection explains how species change", "Species never change", "Humans are unique", "Animals don't evolve"],
+    ["They shared a common ancestor", "Same climate", "Similar soil", "Shared predators"],
+    ["Lyell showed the Earth was old enough for evolution", "Lyell discovered fossils", "Lyell created evolution", "Lyell studied birds"],
+    ["Malthus showed limits to population growth", "Malthus mapped the Galápagos", "Malthus studied plants", "Malthus denied evolution"],
+    ["Derived and ancestral traits", "Radioactive decay", "Chemical composition", "Fossil age"],
+    ["Homologous, analogous, and vestigial structures", "Fossil evidence", "Embryos only", "Plant traits"],
+    ["Molecular evidence", "Anatomy", "Fossils", "Embryology"],
+    ["Distribution of species across Earth", "Age of Earth", "Molecular changes", "Climate"],
+    ["About 4.6 billion years", "10,000 years", "1 million years", "2.3 billion years"],
+    ["Volcanic gases", "Photosynthesis", "Animals", "Lightning"],
+    ["Bacteria", "Fungi", "Fish", "Reptiles"],
+    ["It explains how species adapt and evolve", "It stops mutation", "It causes extinction", "It changes Earth’s orbit"],
+    ["Creating variation for natural selection", "Stabilizing DNA", "Erasing old traits", "Making fossils"],
+  ];
 
   document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector("main");
@@ -131,7 +170,7 @@
 
 <aside>
   <h2>Video Player</h2>
-  <input type="text" id="videoURL" placeholder="Paste YouTube link here">
+  <input type="text" id="videoURL" placeholder="Paste YouTube link here" style="width:100%">
   <button onclick="loadVideo()">Load Video</button>
   <iframe id="youtubePlayer" src="" frameborder="0" allowfullscreen></iframe>
 </aside>
